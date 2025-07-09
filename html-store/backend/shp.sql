@@ -41,11 +41,14 @@ CREATE TABLE purchases (
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
--- Sample purchase data for testing
+
+-- Add some sample purchase data for testing
 INSERT INTO purchases (username, product_id) VALUES
 ('test8', 1),
 ('test8', 3),
-('test8', 5);
+('test8', 5)
+ON DUPLICATE KEY UPDATE 
+    username = VALUES(username);
 
 -- to retrieve the info needed for bhoomi's map
 

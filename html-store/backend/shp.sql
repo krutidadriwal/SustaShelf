@@ -19,13 +19,18 @@ CREATE TABLE products (
     price INT NOT NULL,
     sale_year INT,
     warranty_years INT,
-    image VARCHAR(255)
+    image VARCHAR(255),
+    metal VARCHAR(50)
 );
 
-INSERT INTO products (id, product, price, sale_year, warranty_years, image) 
+INSERT INTO products (id, product, price, sale_year, warranty_years, image, metal) 
 VALUES  
-    (1, 'Smartphone', 3000, 2023, 2, '../images/smartphone.jpg'), 
-    (2, 'Laptop', 3000000, 2021, 4, '../images/laptop.jpg');
+    (1, 'Smartphone', 3000, 2023, 2, '../images/smartphone.jpg', 'aluminum'), 
+    (2, 'Laptop', 3000000, 2021, 4, '../images/laptop.jpg', 'aluminum'),
+    (3, 'Gold Ring', 25000, 2022, 1, '../images/ring.jpg', 'gold'),
+    (4, 'Silver Watch', 15000, 2020, 3, '../images/watch.jpg', 'silver'),
+    (5, 'Copper Bottle', 800, 2019, 5, '../images/bottle.jpg', 'copper'),
+    (6, 'Steel Frame', 5000, 2018, 10, '../images/frame.jpg', 'steel');
 
 
 CREATE TABLE purchases (
@@ -36,6 +41,11 @@ CREATE TABLE purchases (
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
+-- Sample purchase data for testing
+INSERT INTO purchases (username, product_id) VALUES
+('test8', 1),
+('test8', 3),
+('test8', 5);
 
 -- to retrieve the info needed for bhoomi's map
 

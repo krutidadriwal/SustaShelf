@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustaShelf - Make Retails Sustainable</title>
+    
+    <link rel="stylesheet" href="style/index.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geo&family=Iceland&family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous">
+</head>
+<body>
+    <section class="header">
+         <nav>
+            <a href="index.html"><img src=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="backend/shop.php">SHOP</a></li>
+                    <li><a href="">DFD</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="">CONTACT</a></li>              
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+         </nav>
+
+<div class="text-box">
+    <h1>Trash into Treasure with AI
+</h1>
+    <p>Discover how AI can help you find sustainable products and reduce waste.</p>
+    <a href="register.html" class="hero-btn">Start the Demo</a>
+</div>
+</section>
+
+<!-- ---- Features ---- -->
+<section class="feature">
+    <h1>Our Features</h1>
+    <p>Explore the features that make SustaShelf unique.</p>
+
+    <div class="row">
+        <div class="feature-col">
+            
+            <h3>AI-Powered Recommendations</h3>
+            <p>Get personalized product suggestions based on your preferences and sustainability goals.</p>
+        </div>
+        <div class="feature-col">
+            
+            <h3>Sustainable Product Database</h3>
+            <p>Access a comprehensive database of eco-friendly products from various categories.</p>
+        </div>
+        <div class="feature-col">
+            
+            <h3>Community Engagement</h3>
+            <p>Join a community of like-minded individuals committed to sustainable living.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!------------ Hotspots------------>
+<section class="hotspot">
+    <h1>Collection Hotspot</h1>
+    <p>Discover our latest collection of sustainable products that are making a difference.</p>
+
+    <div class="row">
+        <div class="hotspot-col">
+            <img src="images/pexels-qasim-ali-214378309-13230181.jpg">
+            <div class="layer">
+                <h3>Junk Dealer</h3>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<!------- JavaScript for Toggle Menu ------->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>    
+</body>
+</html>

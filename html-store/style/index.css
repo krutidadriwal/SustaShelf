@@ -7,7 +7,7 @@
 .header{
     min-height: 100vh;
     width:100%;
-    background-image: linear-gradient(#459d72af, #342b2baf), url('../images/bg-img.jpg');
+    background-image: linear-gradient(rgba(69, 157, 114, 0.7), rgba(52, 43, 43, 0.7)), url('../images/bg-img.jpg');
     background-position: center;
     background-size: cover;
     position: relative;
@@ -37,13 +37,20 @@ nav img{
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
+
+.nav-links ul li a:hover{
+    color: #DEFBC2;
+}
+
 .nav-links ul li::after{
     content: '';
     width: 0%;
     height: 2px;
-    background: #defbc2;
+    background: #DEFBC2;
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -52,7 +59,6 @@ nav img{
 .nav-links ul li:hover::after{
     width: 100%;
 }
-
 
 .text-box{
     position: absolute;
@@ -66,30 +72,38 @@ nav img{
 
 .text-box h1{
     font-size: 62px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(52, 43, 43, 0.5);
 }
 
 .text-box p{
-    font-size: 14px;
+    font-size: 16px;
     margin: 10px 0 40px;
-    color: #fff;
+    color: #DEFBC2;
+    font-weight: 400;
 }
 
 .hero-btn{
     display: inline-block;
-    padding: 12px 34px;
+    padding: 15px 40px;
     background: transparent;
     color: #fff;
     text-decoration: none;
-    font-size: 13px;
-    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #DEFBC2;
+    border-radius: 25px;
     position: relative;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .hero-btn:hover{
-    border: 1px solid #90d26d;
-    background: #90d26d;
-    transition: 1s;
+    border: 2px solid #90D26D;
+    background: #90D26D;
+    color: #342B2B;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(144, 210, 109, 0.3);
 }
 
 nav .fa{
@@ -99,26 +113,26 @@ nav .fa{
 @media(max-width: 700px){
     
     .text-box h1{
-        font-size: 20px;
+        font-size: 32px;
     }
     .nav-links ul li{
         display: block;
     }
     .nav-links {
         position: absolute;
-        background: #459d72;
+        background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
         height: 100vh;
         width: 200px;
         top: 0;
         right: -200px;
         text-align: left;
         z-index: 2;
-        transform: 1s;
+        transition: 1s;
     }
 
     nav .fa{
         display: block;
-        color: #fff;
+        color: #DEFBC2;
         font-size: 22px;
         cursor: pointer;
     }
@@ -138,13 +152,14 @@ nav .fa{
 h1{
     font-size: 36px;
     font-weight: 600;
+    color: #342B2B;
 }
 
 p{
     color:#459d72;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
     padding: 10px;
 }
 
@@ -156,22 +171,35 @@ p{
 
 .feature-col{
     flex-basis: 31%;
-    background: #ddfbc2a4;
-    border-radius: 10px;
-    padding: 20px 12px;
+    background: rgba(222, 251, 194, 0.6);
+    border-radius: 15px;
+    padding: 30px 20px;
     box-sizing: border-box;
-    transition: 0.5s;
+    transition: all 0.5s ease;
+    border: 2px solid transparent;
 }
 
 h3{
     text-align: center;
     font-weight: 600;
-    margin: 10px 0;
+    margin: 15px 0;
+    color: #342B2B;
+    font-size: 1.4em;
 }
 
 .feature-col:hover{
-    box-shadow: 0 0 20px 0 rgba(0,0, 0, 0.2);
-    
+    box-shadow: 0 15px 35px rgba(69, 157, 114, 0.3);
+    transform: translateY(-5px);
+    border: 2px solid #90D26D;
+    background: rgba(144, 210, 109, 0.8);
+}
+
+.feature-col:hover h3{
+    color: white;
+}
+
+.feature-col:hover p{
+    color: white;
 }
 
 @media(max-width: 700px){
@@ -179,9 +207,8 @@ h3{
         flex-direction: column;
     }
     .feature-col{
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
-    
 }
 
 /* ------------hotspot------------ */
@@ -189,21 +216,23 @@ h3{
     width: 80%;
     margin: auto;
     text-align: center;
-    padding-top: 50px;
+    padding: 80px 0;
 }
 
 .hotspot-col{
     flex-basis: 32%;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(52, 43, 43, 0.2);
 }
 
 .hotspot-col img{
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .layer{
@@ -216,10 +245,26 @@ h3{
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.5s;
+    transition: all 0.5s ease;
+}
+
+.layer h3{
+    color: white;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(52, 43, 43, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .layer:hover{
-    background: #90d26dbd;
-    
+    background: rgba(69, 157, 114, 0.8);
+}
+
+.layer:hover h3{
+    opacity: 1;
+}
+
+.hotspot-col:hover img{
+    transform: scale(1.1);
 }

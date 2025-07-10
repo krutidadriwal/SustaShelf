@@ -30,7 +30,7 @@ VALUES
     (3, 'Gold Ring', 25000, 2022, 1, '../images/ring.jpg', 'gold'),
     (4, 'Silver Watch', 15000, 2020, 3, '../images/watch.jpg', 'silver'),
     (5, 'Copper Bottle', 800, 2019, 5, '../images/bottle.jpg', 'copper'),
-    (6, 'Steel Frame', 5000, 2018, 10, '../images/frame.jpg', 'steel');
+    (6, 'Tiffin', 5000, 2018, 10, '../images/tiffin.jpg', 'steel');
 
 
 CREATE TABLE purchases (

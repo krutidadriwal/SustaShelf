@@ -41,6 +41,11 @@ CREATE TABLE purchases (
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
+-- Sample purchase data for testing
+INSERT INTO purchases (username, product_id) VALUES
+('test8', 1),
+('test8', 3),
+('test8', 5);
 
 -- Add some sample purchase data for testing
 INSERT INTO purchases (username, product_id) VALUES

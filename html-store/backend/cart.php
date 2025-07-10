@@ -3,45 +3,19 @@
 
 <head>
     <title>Shopping Cart</title>
-
+    <link rel="stylesheet" href="../style/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<style>
-    body {
-        background-color: green;
-    }
-    header, nav, main, footer {
-        background-color: white;
-    } 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-    th, td {
-        text-align: left;
-        padding: 8px;
-    }
-    th {
-        background-color: #dddddd;
-    }
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    footer {
-        background-color: green;
-        margin-top: 348px;
-        color: black;
-        max-width: 264px;
-    
-    }
-    
-    
-</style>
 
 <body>
     <header>
-        <h1><?php session_start();
-$user = $_SESSION['user'];
-echo $user['product']; ?> Shopping Cart</h1>
+        <h1><?php 
+            session_start();
+            $user = $_SESSION['user'];
+            echo $user['name']; 
+        ?>'s Shopping Cart</h1>
     </header>
 
     <nav>

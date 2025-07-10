@@ -1,83 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    color: green;
-    font-family: Arial, sans-serif;
-  }
+  background: linear-gradient(135deg, #DEFBC2 0%, #90D26D 100%);
+  min-height: 100vh;
+  color: #342B2B;
+}
 
-  header {
-    background-color: white;
-    color: green;
-    padding: 20px;
-  }
+header {
+  background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(69, 157, 114, 0.3);
+}
 
-  nav {
-      background-color: #999999;
-    padding: 10px;
-  }
+header h1 {
+  font-size: 2em;
+  font-weight: 600;
+}
 
+nav {
+  background: rgba(52, 43, 43, 0.9);
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(52, 43, 43, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background: #459d72;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(69, 157, 114, 0.4);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #342B2B;
+  text-align: center;
+  font-weight: 600;
+}
+
+section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+section li {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(52, 43, 43, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+section li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(52, 43, 43, 0.15);
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 15px 0;
+  color: #342B2B;
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+  max-width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(69, 157, 114, 0.2);
+}
+
+section li p {
+  margin: 15px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+section li p span {
+  color: #459d72;
+  font-size: 1.3em;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #342B2B;
+  font-weight: 500;
+}
+
+input[type="number"] {
+  width: 80px;
+  padding: 8px;
+  border: 2px solid #DEFBC2;
+  border-radius: 6px;
+  margin: 0 10px;
+  text-align: center;
+  font-size: 1em;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #459d72;
+}
+
+button {
+  background: linear-gradient(135deg, #459d72 0%, #90D26D 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(69, 157, 114, 0.4);
+}
+
+footer {
+  background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
   nav ul {
-    list-style: none;
-    margin: 2px;
-    padding: 0;
+    flex-direction: column;
+    gap: 10px;
   }
-  nav a {
-      color: red;
-    text-decoration: none;
-    padding: 2px;
-    display: flex;
-    cursor: pointer;
+  
+  section ul {
+    grid-template-columns: 1fr;
   }
-
-  nav a:hover {
-    background-color: green;
-    color: red;
-  }
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-
-  section {
-    margin-bottom: 20px;
-  }
-
+  
   h2 {
-    font-size: 32px;
-    margin-top: 0;
+    font-size: 2em;
   }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  li {
-    margin-right: 20px;
-    margin-bottom: 20px;
-    flex-basis: calc(33.33% - 20px);
-  }
-
-  h3 {
-    font-size: 24px;
-    margin-top: 0;
-  }
-
-  img {
-    max-width: 180px;
-    margin-bottom: 10px;
-  }
-
-  button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
+}

@@ -35,14 +35,14 @@ if (isset($_POST["add_to_cart"])) {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="header-container">
+        <header>
             <h1>Welcome <?php
             $user = $_SESSION["user"];
             echo $user["name"];
             ?> to SustaShelf</h1>
-        </div>
+        </header>
         
-        <div class="navigation-container">
+        <nav>
             <ul>
                 <li><a href="../index.html">🏠 Home</a></li>
                 <li><a href="shop.php">🛍️ Shop</a></li>
@@ -50,10 +50,10 @@ if (isset($_POST["add_to_cart"])) {
                 <li><a href="admin.php">⚙️ Admin</a></li>
                 <li><a href="logout.php">🚪 Logout</a></li>
             </ul>
-        </div>
+        </nav>
         
-        <div class="main-container">
-            <div class="products-section">
+        <main>
+            <section>
                 <h2>Premium Products</h2>
                 <?php
                 // Database connection
@@ -108,11 +108,11 @@ if (isset($_POST["add_to_cart"])) {
                 }
                 $conn->close();
                 ?>
-            </div>
-        </div>
+            </section>
+        </main>
         
-        <div class="footer-container">
+        <footer>
             <p>🌱 SustaShelf - Making Retail Sustainable | Premium Shopping Experience</p>
-        </div>
+        </footer>
     </body>
 </html>

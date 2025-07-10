@@ -1,4 +1,4 @@
-THIS SHOULD BE A LINTER ERROR/* Modern E-commerce Shop Design */
+/* Modern E-commerce Shop Design */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 /* Header Styling */
-.header-container {
+header {
   background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
   color: white;
   padding: 30px 0;
@@ -24,7 +24,7 @@ body {
   overflow: hidden;
 }
 
-.header-container::before {
+header::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -46,7 +46,7 @@ body {
   100% { transform: translateX(100%); }
 }
 
-.header-container h1 {
+header h1 {
   font-size: 2.8em;
   font-weight: 700;
   margin-bottom: 10px;
@@ -56,7 +56,7 @@ body {
 }
 
 /* Navigation Styling */
-.navigation-container {
+nav {
   background: rgba(69, 157, 114, 0.95);
   backdrop-filter: blur(10px);
   padding: 20px 0;
@@ -66,7 +66,7 @@ body {
   z-index: 1000;
 }
 
-.navigation-container ul {
+nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -76,11 +76,11 @@ body {
   padding: 0 20px;
 }
 
-.navigation-container li {
+nav li {
   position: relative;
 }
 
-.navigation-container a {
+nav a {
   color: white;
   text-decoration: none;
   padding: 15px 30px;
@@ -92,7 +92,7 @@ body {
   overflow: hidden;
 }
 
-.navigation-container a::before {
+nav a::before {
   content: '';
   position: absolute;
   top: 0;
@@ -103,24 +103,24 @@ body {
   transition: left 0.5s;
 }
 
-.navigation-container a:hover::before {
+nav a:hover::before {
   left: 100%;
 }
 
-.navigation-container a:hover {
+nav a:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Main Container */
-.main-container {
+main {
   max-width: 1400px;
   margin: 0 auto;
   padding: 60px 20px;
 }
 
-.products-section {
+section {
   margin-bottom: 60px;
 }
 
@@ -154,17 +154,17 @@ h2::after {
 section ul {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
 /* Product Cards */
 section li {
   background: white;
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 0;
-  box-shadow: 0 15px 40px rgba(52, 43, 43, 0.15);
+  box-shadow: 0 10px 25px rgba(52, 43, 43, 0.12);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   position: relative;
@@ -189,62 +189,56 @@ section li:hover::before {
 }
 
 section li:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 25px 60px rgba(52, 43, 43, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(52, 43, 43, 0.2);
   border-color: #90D26D;
 }
 
 /* Product Image Container */
 .product-image {
   position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 180px;
   overflow: hidden;
-  border-radius: 25px 25px 0 0;
+  border-radius: 20px 20px 0 0;
   background: linear-gradient(135deg, #DEFBC2 0%, #90D26D 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 section li img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 2;
-  aspect-ratio: 1 / 1;
-  display: block;
 }
 
 section li:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 /* Product Content */
 .product-content {
-  padding: 30px;
+  padding: 20px;
   position: relative;
   z-index: 2;
 }
 
 h3 {
-  font-size: 1.8em;
-  margin-bottom: 15px;
+  font-size: 1.4em;
+  margin-bottom: 10px;
   color: #342B2B;
   font-weight: 700;
   line-height: 1.3;
 }
 
 .price {
-  font-size: 2em;
+  font-size: 1.6em;
   font-weight: 800;
   color: #459d72;
-  margin: 20px 0;
+  margin: 15px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .price::before {
@@ -256,12 +250,23 @@ h3 {
 /* Product Details Badges */
 .product-details {
   display: flex;
-  gap: 10px;
-  margin: 15px 0;
+  gap: 8px;
+  margin: 12px 0;
   flex-wrap: wrap;
 }
 
-.metal-badge:hover{
+.metal-badge, .warranty-badge {
+  background: linear-gradient(135deg, #90D26D 0%, #DEFBC2 100%);
+  color: #342B2B;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: 600;
+  border: 2px solid #90D26D;
+  transition: all 0.3s ease;
+}
+
+.metal-badge:hover, .warranty-badge:hover {
   background: linear-gradient(135deg, #459d72 0%, #90D26D 100%);
   color: white;
   transform: translateY(-2px);
@@ -269,33 +274,33 @@ h3 {
 
 /* Product Form */
 .product-form {
-  margin-top: 25px;
+  margin-top: 18px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .quantity-container {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   justify-content: center;
 }
 
 .product-form label {
   font-weight: 600;
   color: #342B2B;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 input[type="number"] {
-  width: 80px;
-  height: 50px;
-  padding: 0 15px;
-  border: 3px solid #DEFBC2;
-  border-radius: 15px;
+  width: 70px;
+  height: 40px;
+  padding: 0 12px;
+  border: 2px solid #DEFBC2;
+  border-radius: 12px;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 600;
   color: #342B2B;
   background: white;
@@ -314,9 +319,9 @@ button[type="submit"] {
   background: linear-gradient(135deg, #459d72 0%, #90D26D 100%);
   color: white;
   border: none;
-  padding: 18px 35px;
-  border-radius: 50px;
-  font-size: 1.2em;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 1em;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -324,7 +329,7 @@ button[type="submit"] {
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(69, 157, 114, 0.3);
+  box-shadow: 0 6px 20px rgba(69, 157, 114, 0.3);
 }
 
 button[type="submit"]::before {
@@ -346,8 +351,8 @@ button[type="submit"]:hover::before {
 }
 
 button[type="submit"]:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(69, 157, 114, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(69, 157, 114, 0.4);
 }
 
 button[type="submit"]:active {
@@ -419,15 +424,15 @@ footer {
   }
   
   .product-content {
-    padding: 25px 20px;
+    padding: 18px 15px;
   }
   
   h3 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   
   .price {
-    font-size: 1.8em;
+    font-size: 1.4em;
   }
 }
 
@@ -450,12 +455,12 @@ footer {
   }
   
   .product-content {
-    padding: 20px 15px;
+    padding: 15px 12px;
   }
   
   button[type="submit"] {
-    padding: 15px 30px;
-    font-size: 1em;
+    padding: 10px 20px;
+    font-size: 0.9em;
   }
 }
 

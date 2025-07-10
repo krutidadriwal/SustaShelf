@@ -1,4 +1,4 @@
-THIS SHOULD BE A LINTER ERROR/* Modern E-commerce Shop Design */
+/* Modern E-commerce Shop Design */
 * {
   margin: 0;
   padding: 0;
@@ -151,7 +151,7 @@ h2::after {
 }
 
 /* Products Grid */
-section ul {
+.products-section ul {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -160,7 +160,7 @@ section ul {
 }
 
 /* Product Cards */
-section li {
+.products-section li {
   background: white;
   border-radius: 25px;
   padding: 0;
@@ -171,7 +171,7 @@ section li {
   border: 2px solid transparent;
 }
 
-section li::before {
+.products-section li::before {
   content: '';
   position: absolute;
   top: 0;
@@ -184,11 +184,11 @@ section li::before {
   z-index: 1;
 }
 
-section li:hover::before {
+.products-section li:hover::before {
   opacity: 0.05;
 }
 
-section li:hover {
+.products-section li:hover {
   transform: translateY(-15px);
   box-shadow: 0 25px 60px rgba(52, 43, 43, 0.25);
   border-color: #90D26D;
@@ -203,7 +203,7 @@ section li:hover {
   background: linear-gradient(135deg, #DEFBC2 0%, #90D26D 100%);
 }
 
-section li img {
+.products-section li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -212,7 +212,7 @@ section li img {
   z-index: 2;
 }
 
-section li:hover img {
+.products-section li:hover img {
   transform: scale(1.1);
 }
 
@@ -378,7 +378,7 @@ button[type="submit"]:active {
 }
 
 /* Footer */
-footer {
+.footer-container {
   background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
   color: white;
   padding: 40px 0;
@@ -391,22 +391,22 @@ footer {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  header h1 {
+  .header-container h1 {
     font-size: 2.2em;
   }
   
-  nav ul {
+  .navigation-container ul {
     flex-direction: column;
     gap: 15px;
     padding: 0 40px;
   }
   
-  nav a {
+  .navigation-container a {
     padding: 12px 25px;
     font-size: 1em;
   }
   
-  main {
+  .main-container {
     padding: 40px 15px;
   }
   
@@ -414,12 +414,12 @@ footer {
     font-size: 2.5em;
   }
   
-  section ul {
+  .products-section ul {
     grid-template-columns: 1fr;
     gap: 30px;
   }
   
-  section li {
+  .products-section li {
     margin: 0 10px;
   }
   
@@ -437,11 +437,11 @@ footer {
 }
 
 @media (max-width: 480px) {
-  header {
+  .header-container {
     padding: 20px 0;
   }
   
-  header h1 {
+  .header-container h1 {
     font-size: 1.8em;
   }
   
@@ -449,7 +449,7 @@ footer {
     font-size: 2em;
   }
   
-  section ul {
+  .products-section ul {
     grid-template-columns: 1fr;
     gap: 25px;
   }

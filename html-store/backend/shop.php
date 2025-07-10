@@ -24,31 +24,37 @@ if (isset($_POST["add_to_cart"])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>SustaShopping Web Application</title>
-        <link rel="stylesheet" 
-                href="../style/shop.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SustaShelf - Premium Shopping Experience</title>
+        <link rel="stylesheet" href="../style/shop.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <h1>Welcome <?php
             $user = $_SESSION["user"];
             echo $user["name"];
-            ?> to SustaShopping Web Application</h1>
+            ?> to SustaShelf</h1>
         </header>
+        
         <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="shop.php">Shop</a></li>
-                <li><a href="cart.php">Cart</a></li>
-                <li><a href="logout.php">Logout</a></li>
-
+                <li><a href="../index.html">🏠 Home</a></li>
+                <li><a href="shop.php">🛍️ Shop</a></li>
+                <li><a href="cart.php">🛒 Cart</a></li>
+                <li><a href="admin.php">⚙️ Admin</a></li>
+                <li><a href="logout.php">🚪 Logout</a></li>
             </ul>
         </nav>
+        
         <main>
             <section>
-                <h2>Products</h2>
+                <h2>Premium Products</h2>
                 <?php
                 // Database connection
                 $conn = new mysqli("localhost", "root", "", "shp");
@@ -60,39 +66,53 @@ if (isset($_POST["add_to_cart"])) {
                 $sql = "SELECT * FROM products";
                 $result = $conn->query($sql);
 
-                echo "<ul>";
                 if ($result->num_rows > 0) {
+                    echo "<ul>";
                     while ($row = $result->fetch_assoc()) {
                         $id    = $row["id"];
                         $name  = $row["product"];
                         $price = $row["price"];
-                        $img   = $row["image"]; // path like 'images/bag.jpg'
+                        $img   = $row["image"];
+                        $metal = isset($row["metal"]) ? $row["metal"] : "N/A";
+                        $warranty = isset($row["warranty_years"]) ? $row["warranty_years"] : "1";
 
                         echo "
                         <li>
-                            <h3>$name</h3>
-                            <img src='$img' alt='$name' width='150'>
-                            <p><span>₹$price</span></p>
-                            <form method='post' action='shop.php'>
-                                <input type='hidden' name='product_id' value='$id'>
-                                <label>Quantity:</label>
-                                <input type='number' name='product_quantity' value='1' min='1' max='10'>
-                                <button type='submit' name='add_to_cart'>Add to Cart</button>
-                            </form>
+                            <div class='product-image'>
+                                <img src='$img' alt='$name' loading='lazy'>
+                            </div>
+                            <div class='product-content'>
+                                <h3>$name</h3>
+                                <div class='price'>$price</div>
+                                <div class='product-details'>
+                                    <span class='metal-badge'>Metal: " . ucfirst($metal) . "</span>
+                                    <span class='warranty-badge'>$warranty Year(s) Warranty</span>
+                                </div>
+                                <form method='post' action='shop.php' class='product-form'>
+                                    <input type='hidden' name='product_id' value='$id'>
+                                    <div class='quantity-container'>
+                                        <label for='quantity_$id'>Quantity:</label>
+                                        <input type='number' id='quantity_$id' name='product_quantity' value='1' min='1' max='10'>
+                                    </div>
+                                    <button type='submit' name='add_to_cart'>🛒 Add to Cart</button>
+                                </form>
+                            </div>
                         </li>";
                     }
+                    echo "</ul>";
                 } else {
-                    echo "<li>No products found.</li>";
+                    echo "<div class='empty-state'>
+                            <h3>No Products Available</h3>
+                            <p>Check back later for amazing sustainable products!</p>
+                          </div>";
                 }
-                echo "</ul>";
                 $conn->close();
                 ?>
-
             </section>
         </main>
+        
         <footer>
-            <p>&LIC :: Shopping Web Application</p>
+            <p>🌱 SustaShelf - Making Retail Sustainable | Premium Shopping Experience</p>
         </footer>
-        <script src="shop.php"></script>
     </body>
 </html>

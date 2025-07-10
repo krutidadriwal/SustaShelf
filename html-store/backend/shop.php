@@ -35,14 +35,14 @@ if (isset($_POST["add_to_cart"])) {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
+        <header class="header-container">
             <h1>Welcome <?php
             $user = $_SESSION["user"];
             echo $user["name"];
             ?> to SustaShelf</h1>
         </header>
         
-        <nav>
+        <nav class="navigation-container">
             <ul>
                 <li><a href="../index.html">🏠 Home</a></li>
                 <li><a href="shop.php">🛍️ Shop</a></li>
@@ -52,8 +52,8 @@ if (isset($_POST["add_to_cart"])) {
             </ul>
         </nav>
         
-        <main>
-            <section>
+        <div class="main-container">
+            <section class="product-section">
                 <h2>Premium Products</h2>
                 <?php
                 // Database connection
@@ -74,7 +74,6 @@ if (isset($_POST["add_to_cart"])) {
                         $price = $row["price"];
                         $img   = $row["image"];
                         $metal = isset($row["metal"]) ? $row["metal"] : "N/A";
-                        $warranty = isset($row["warranty_years"]) ? $row["warranty_years"] : "1";
 
                         echo "
                         <li>
@@ -86,7 +85,6 @@ if (isset($_POST["add_to_cart"])) {
                                 <div class='price'>$price</div>
                                 <div class='product-details'>
                                     <span class='metal-badge'>Metal: " . ucfirst($metal) . "</span>
-                                    <span class='warranty-badge'>$warranty Year(s) Warranty</span>
                                 </div>
                                 <form method='post' action='shop.php' class='product-form'>
                                     <input type='hidden' name='product_id' value='$id'>
@@ -109,7 +107,7 @@ if (isset($_POST["add_to_cart"])) {
                 $conn->close();
                 ?>
             </section>
-        </main>
+            </div>
         
         <footer>
             <p>🌱 SustaShelf - Making Retail Sustainable | Premium Shopping Experience</p>

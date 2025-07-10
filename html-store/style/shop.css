@@ -1,4 +1,4 @@
-/* Modern E-commerce Shop Design */
+THIS SHOULD BE A LINTER ERROR/* Modern E-commerce Shop Design */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 /* Header Styling */
-header {
+.header-container {
   background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
   color: white;
   padding: 30px 0;
@@ -24,7 +24,7 @@ header {
   overflow: hidden;
 }
 
-header::before {
+.header-container::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -46,7 +46,7 @@ header::before {
   100% { transform: translateX(100%); }
 }
 
-header h1 {
+.header-container h1 {
   font-size: 2.8em;
   font-weight: 700;
   margin-bottom: 10px;
@@ -56,7 +56,7 @@ header h1 {
 }
 
 /* Navigation Styling */
-nav {
+.navigation-container {
   background: rgba(69, 157, 114, 0.95);
   backdrop-filter: blur(10px);
   padding: 20px 0;
@@ -66,7 +66,7 @@ nav {
   z-index: 1000;
 }
 
-nav ul {
+.navigation-container ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -76,11 +76,11 @@ nav ul {
   padding: 0 20px;
 }
 
-nav li {
+.navigation-container li {
   position: relative;
 }
 
-nav a {
+.navigation-container a {
   color: white;
   text-decoration: none;
   padding: 15px 30px;
@@ -92,7 +92,7 @@ nav a {
   overflow: hidden;
 }
 
-nav a::before {
+.navigation-container a::before {
   content: '';
   position: absolute;
   top: 0;
@@ -103,24 +103,24 @@ nav a::before {
   transition: left 0.5s;
 }
 
-nav a:hover::before {
+.navigation-container a:hover::before {
   left: 100%;
 }
 
-nav a:hover {
+.navigation-container a:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Main Container */
-main {
+.main-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 60px 20px;
 }
 
-section {
+.products-section {
   margin-bottom: 60px;
 }
 

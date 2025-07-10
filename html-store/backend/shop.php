@@ -108,11 +108,11 @@ if (isset($_POST["add_to_cart"])) {
                 }
                 $conn->close();
                 ?>
-            </section>
-        </main>
+            </div>
+        </div>
         
-        <footer>
+        <div class="footer-container">
             <p>🌱 SustaShelf - Making Retail Sustainable | Premium Shopping Experience</p>
-        </footer>
+        </div>
     </body>
 </html>

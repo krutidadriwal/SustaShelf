@@ -139,6 +139,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["metal_name"])) {
                 <?php endif; ?>
             </div>
         <?php endif; ?>
+    
+        <!-- -->
+        <div class="message-section">
+            <p></p>
+
+        <!-- Pass metal_filter to checkout.php -->
+        <form method="get" action="checkout.php" style="margin-top: 2em; text-align: center;">
+            <input type="hidden" name="metal_filter" value="<?php echo htmlspecialchars($metal_filter); ?>">
+            <button type="submit" class="submit-btn">Show Purchases for Metal in Checkout</button>
+        </form>
 
         <!-- Back Link -->
         <a href="../index.html" class="back-link">← Back to Home</a>

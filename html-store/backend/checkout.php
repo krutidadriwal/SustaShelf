@@ -1,3 +1,36 @@
+<?php
+session_start();
+$conn = new mysqli("localhost", "root", "", "shp");
+
+// Make sure user is logged in
+$username = $_SESSION['user']['username'] ?? null;
+
+$items_to_sell = [];
+
+$metal_filter = isset($_GET['metal_filter']) ? $_GET['metal_filter'] : '';
+if ($username) {
+    if ($metal_filter) {
+        $sql = "SELECT p.product, p.sale_year, p.metal FROM purchases pu
+                JOIN products p ON pu.product_id = p.id
+                WHERE pu.username = ? AND LOWER(p.metal) = LOWER(?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $username, $metal_filter);
+    } else {
+        $sql = "SELECT p.product, p.sale_year, p.metal FROM purchases pu
+                JOIN products p ON pu.product_id = p.id
+                WHERE pu.username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+    }
+    $stmt->execute();
+    $result = $stmt->get_result();
+    while ($row = $result->fetch_assoc()) {
+        $items_to_sell[] = $row;
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -64,7 +97,22 @@
 
             <input type="submit" 
                    value="Place Order">
+
         </form>
+
+        <!-- Sell Option Section -->
+        <?php if (!empty($items_to_sell)) : ?>
+            <div class="sell-section" style="margin-top:2em;">
+                <h2>Sell Your Purchased Items</h2>
+                <?php foreach ($items_to_sell as $item): ?>
+                    <div class="sell-item" style="margin-bottom:1em;">
+                        <span>Do you want to sell <strong><?php echo htmlspecialchars($item['product']); ?></strong> purchased in <strong><?php echo htmlspecialchars($item['sale_year']); ?></strong>?</span>
+                        <button onclick="alert('Your <?php echo htmlspecialchars($item['product']); ?> will be picked during delivery.')">Yes</button>
+                        <button>No</button>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     </section>
 
     <footer>

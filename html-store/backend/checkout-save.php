@@ -3,24 +3,37 @@
 <head>
     <style>
         body {
-            background-color: #f2f2f2;
+            background-color: #DEFBC2;
             font-family: Arial, sans-serif;
         }
         
         h1 {
-            color: #008000;
+            color: #342B2B;
             font-size: 2.5em;
             text-align: center;
             margin-top: 50px;
         }
         
         p {
-            color: #333;
+            color: #342B2B;
             font-size: 1.2em;
             text-align: center;
             margin-top: 20px;
         }
-        
+        .continue-link {
+            display: block;
+            margin: 30px auto 0 auto;
+            padding: 12px 32px;
+            background-color: #7DC242;
+            color: #fff;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(52,43,43,0.12);
+            transition: background 0.2s;
+            text-align: center;
+            width: fit-content;
+        }
         
     </style>
 </head>
@@ -31,8 +44,8 @@ session_start();
 
 // Basic checks
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-    echo "Your cart is empty.";
-    exit;
+    // If cart is empty, add faux product with product_id = 0
+    $_SESSION['cart'] = [0 => 1];
 }
 
 // Get user info from session

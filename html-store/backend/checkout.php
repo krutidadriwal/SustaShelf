@@ -2,31 +2,19 @@
 session_start();
 $conn = new mysqli("localhost", "root", "", "shp");
 
-// Make sure user is logged in
-$username = $_SESSION['user']['username'] ?? null;
+// Always use test8 as the user
+$username = 'test8';
 
 $items_to_sell = [];
 
-$metal_filter = isset($_GET['metal_filter']) ? $_GET['metal_filter'] : '';
-if ($username) {
-    if ($metal_filter) {
-        $sql = "SELECT p.product, p.sale_year, p.metal FROM purchases pu
-                JOIN products p ON pu.product_id = p.id
-                WHERE pu.username = ? AND LOWER(p.metal) = LOWER(?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $username, $metal_filter);
-    } else {
-        $sql = "SELECT p.product, p.sale_year, p.metal FROM purchases pu
-                JOIN products p ON pu.product_id = p.id
-                WHERE pu.username = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("s", $username);
-    }
-    $stmt->execute();
-    $result = $stmt->get_result();
-    while ($row = $result->fetch_assoc()) {
-        $items_to_sell[] = $row;
-    }
+$sql = "SELECT p.product, p.sale_year FROM purchases pu
+        JOIN products p ON pu.product_id = p.id
+        WHERE pu.username = 'test8' AND LOWER(p.metal) = 'cobalt'";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    $items_to_sell[] = $row;
 }
 ?>
 
@@ -61,8 +49,13 @@ if ($username) {
         </nav>
     </header>
 
+    <!-- Fixed Chatbot Button -->
+    <button id="chatbot-btn">
+        💬
+    </button>
+    
     <section>
-        <h1>Checkout</h1>
+        <h1>Checkout for a user</h1>
         <form action="checkout-save.php" method="post">
             <h2>Billing Information</h2>
             <label for="name">Name:</label>
@@ -118,6 +111,8 @@ if ($username) {
     <footer>
         <p>&LIC :: Shopping Web Application</p>
     </footer>
+
+    
 </body>
 
 </html>

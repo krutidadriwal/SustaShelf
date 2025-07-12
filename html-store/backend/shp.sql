@@ -24,8 +24,9 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (id, product, price, sale_year, warranty_years, image, metal) 
-VALUES  
-    (1, 'Smartphone', 3000, 2023, 2, '../images/smartphone.jpg', 'aluminum'), 
+VALUES 
+    (0,'empty' , 0 , 0000, 0, '/no_image.jpg', 'null'),
+    (1, 'Smartphone', 3000, 2023, 2, '../images/smartphone.jpg', 'cobalt'), 
     (2, 'Laptop', 3000000, 2021, 4, '../images/laptop.jpg', 'aluminum'),
     (3, 'Gold Ring', 25000, 2022, 1, '../images/ring.jpg', 'gold'),
     (4, 'Silver Watch', 15000, 2020, 3, '../images/watch.jpg', 'silver'),

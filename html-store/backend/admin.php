@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["metal_name"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SustaShelf - Admin Panel</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="../style/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["metal_name"])) {
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>SustaShelf Admin Panel</h1>
+            <h1>Admin Panel</h1>
             <p>Filter Products by Highest Selling Metal</p>
         </div>
 

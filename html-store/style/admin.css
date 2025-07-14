@@ -6,23 +6,24 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #459d72 0%, #90D26D 100%);
+    background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
     min-height: 100vh;
     padding: 20px;
+    color: #DEFBC2;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: white;
+    background: #342B2B;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(52, 43, 43, 0.15);
+    box-shadow: 0 20px 40px rgba(52, 43, 43, 0.25);
     overflow: hidden;
 }
 
 .header {
-    background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
-    color: white;
+    background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
+    color: #DEFBC2;
     padding: 30px;
     text-align: center;
 }
@@ -31,17 +32,18 @@ body {
     font-size: 2.5em;
     margin-bottom: 10px;
     font-weight: 600;
+    color: #DEFBC2;
 }
 
 .header p {
     font-size: 1.1em;
     opacity: 0.9;
-    color: #DEFBC2;
+    color: #90D26D;
 }
 
 .form-section {
     padding: 40px;
-    background: linear-gradient(135deg, #DEFBC2 0%, rgba(222, 251, 194, 0.5) 100%);
+    background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
 }
 
 .form-container {
@@ -57,29 +59,30 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: #342B2B;
+    color: #90D26D;
     font-size: 1.1em;
 }
 
 .form-group input[type="text"] {
     width: 100%;
     padding: 15px;
-    border: 2px solid #90D26D;
+    border: 2px solid #459d72;
     border-radius: 8px;
     font-size: 1em;
     transition: border-color 0.3s ease;
-    background: white;
+    background: #342B2B;
+    color: #DEFBC2;
 }
 
 .form-group input[type="text"]:focus {
     outline: none;
-    border-color: #459d72;
-    box-shadow: 0 0 0 3px rgba(69, 157, 114, 0.1);
+    border-color: #90D26D;
+    box-shadow: 0 0 0 3px rgba(144, 210, 109, 0.1);
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #459d72 0%, #90D26D 100%);
-    color: white;
+    background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
+    color: #DEFBC2;
     padding: 15px 40px;
     border: none;
     border-radius: 8px;
@@ -107,6 +110,7 @@ body {
 
 .results-section {
     padding: 40px;
+    background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
 }
 
 .results-header {
@@ -115,15 +119,15 @@ body {
 }
 
 .results-header h2 {
-    color: #342B2B;
+    color: #90D26D;
     font-size: 2em;
     margin-bottom: 10px;
     font-weight: 600;
 }
 
 .metal-info {
-    background: linear-gradient(135deg, #459d72 0%, #90D26D 100%);
-    color: white;
+    background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
+    color: #DEFBC2;
     padding: 15px 25px;
     border-radius: 25px;
     display: inline-block;
@@ -135,15 +139,16 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-top: 30px;
-    background: white;
+    background: #342B2B;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(52, 43, 43, 0.1);
+    box-shadow: 0 10px 25px rgba(52, 43, 43, 0.2);
+    color: #DEFBC2;
 }
 
 .data-table th {
-    background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
-    color: white;
+    background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
+    color: #DEFBC2;
     padding: 20px;
     text-align: left;
     font-weight: 600;
@@ -153,39 +158,39 @@ body {
 
 .data-table td {
     padding: 18px 20px;
-    border-bottom: 1px solid #DEFBC2;
+    border-bottom: 1px solid #459d72;
     transition: background-color 0.3s ease;
 }
 
 .data-table tr:nth-child(even) {
-    background-color: rgba(222, 251, 194, 0.3);
+    background-color: rgba(69, 157, 114, 0.1);
 }
 
 .data-table tr:hover {
-    background-color: rgba(144, 210, 109, 0.2);
+    background-color: rgba(144, 210, 109, 0.1);
 }
 
 .no-data {
     text-align: center;
     padding: 60px 20px;
-    color: #459d72;
+    color: #90D26D;
 }
 
 .no-data h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #342B2B;
+    color: #DEFBC2;
 }
 
 .no-data p {
-    color: #459d72;
+    color: #90D26D;
     margin: 10px 0;
 }
 
 .back-link {
     display: inline-block;
     margin: 20px 40px;
-    color: #459d72;
+    color: #90D26D;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -193,13 +198,13 @@ body {
 }
 
 .back-link:hover {
-    color: #90D26D;
+    color: #DEFBC2;
 }
 
 .record-count {
     text-align: center;
     margin-bottom: 20px;
-    color: #459d72;
+    color: #90D26D;
     font-style: italic;
     font-weight: 500;
 }

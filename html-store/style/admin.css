@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
+    background: #342B2B;
     min-height: 100vh;
     padding: 20px;
-    color: #DEFBC2;
+    color: #459d72;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
 }
 
 .header {
-    background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
+    background: #342B2B;
     color: #DEFBC2;
     padding: 30px;
     text-align: center;
@@ -43,7 +43,7 @@ body {
 
 .form-section {
     padding: 40px;
-    background: linear-gradient(135deg, #342B2B 0%, #459d72 100%);
+    background: #342B2B;
 }
 
 .form-container {
@@ -81,7 +81,7 @@ body {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #459d72 0%, #342B2B 100%);
+    background: #342B2B;
     color: #DEFBC2;
     padding: 15px 40px;
     border: none;
